@@ -1,3 +1,4 @@
+package edu.javacourse.robot;
 
 public class RobotManager {
 
