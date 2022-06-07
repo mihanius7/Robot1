@@ -1,7 +1,6 @@
 package edu.javacourse.robot;
 
-import java.util.ArrayList;
-import java.util.List;
+import edu.javacourse.robot.datastructures.ObjectQueue;
 
 public class Robot
 {
@@ -10,7 +9,7 @@ public class Robot
     protected double course = 0;
     // Список для хранения линий, по которым перемещался робот
     // Пока будем использовать его без подробностей
-    private ArrayList<RobotLine> lines = new ArrayList<RobotLine>();
+    private ObjectQueue lines = new ObjectQueue();
 
     public Robot(double x, double y) {
         this.x = x;
@@ -26,7 +25,7 @@ public class Robot
         y += distance * Math.sin(course / 180 * Math.PI);
         // Запоминаем координаты пройденного пути в списке
         // Класс List позволяет добавить объект и хранить его
-        lines.add(new RobotLine(xOld, yOld, x, y));
+        lines.push(new RobotLine(xOld, yOld, x, y));
     }
 
     public double getX() {
@@ -45,7 +44,7 @@ public class Robot
         this.course = course;
     }
 
-    public ArrayList<RobotLine> getLines() {
+    public ObjectQueue getLines() {
         return lines;
     }
 }
