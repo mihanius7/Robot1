@@ -15,6 +15,10 @@ public class Robot
         this.x = x;
         this.y = y;
     }
+    
+    public void printCoordinates() {
+    	System.out.println("x = " + x + ", y = " + y);
+    }
 
     public void forward(int distance) {
         // Запоминаем координаты робота перед перемещением
