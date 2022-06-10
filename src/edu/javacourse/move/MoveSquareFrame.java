@@ -20,7 +20,7 @@ public class MoveSquareFrame extends JFrame {
 		JButton buttonDown = new JButton(DOWN);
 		buttonDown.setActionCommand(DOWN);
 		buttonDown.addActionListener(sc);
-		add(buttonUp, BorderLayout.SOUTH);
+		add(buttonDown, BorderLayout.SOUTH);
 
 		setBounds(100, 100, 400, 400);
 	}
