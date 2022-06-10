@@ -5,28 +5,21 @@ import javax.swing.JFrame;
 
 public class RobotManager {
 	public static void main(String[] args) {
-		// Количество сторон многоугольника
-		final int COUNT = 12;
-		// Длина стороны
-		final int SIDE = 100;
-
-		Robot robot = new Robot(200, 50);
-		// Создаем замкнутую фигуру с количеством углов COUNT
+		final int COUNT = 8;
+		final int SIDE = 128;
+		
+		Robot robot = new Robot(175, 50);
+		RobotListener listener = new SimpleRobotListener();
+		robot.setListener(listener);
+		
 		for (int i = 0; i < COUNT; i++) {
 			robot.forward(SIDE);
 			robot.setCourse(robot.getCourse() + 360 / COUNT);
 		}
 
-		// Создаем форму для отрисовки пути нашего робота
 		RobotFrame rf = new RobotFrame(robot);
 		rf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		rf.setVisible(true);
-
-		Robot[] robots = new Robot[10];
-		for (int i = 0; i < robots.length; i++) {
-			robots[i] = new Robot(i * 10, i * 4);
-			robots[i].printCoordinates();
-		}
 
 	}
 }
