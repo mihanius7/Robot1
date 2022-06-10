@@ -1,8 +1,10 @@
 package edu.javacourse.move;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JComponent;
 
@@ -23,6 +25,12 @@ public class SquareComponent extends JComponent implements ActionListener {
 			if (clickedButton.getActionCommand().equals(MoveSquareFrame.DOWN)) {
 				y += STEP;
 			}
+			if (clickedButton.getActionCommand().equals(MoveSquareFrame.LEFT)) {
+				x -= STEP;
+			}
+			if (clickedButton.getActionCommand().equals(MoveSquareFrame.RIGHT)) {
+				x += STEP;
+			}
 			repaint();
 		}
 	}
@@ -30,7 +38,8 @@ public class SquareComponent extends JComponent implements ActionListener {
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawRect(x, y, SQUARE_SIZE, SQUARE_SIZE);
+		g.setColor(Color.RED);
+		g.fillRect(x, y, SQUARE_SIZE, SQUARE_SIZE);
 	}
 
 }

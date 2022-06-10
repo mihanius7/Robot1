@@ -7,6 +7,8 @@ import java.awt.BorderLayout;
 public class MoveSquareFrame extends JFrame {
 	public static final String UP = "UP";
 	public static final String DOWN = "DOWN";
+	public static final String LEFT = "LEFT";
+	public static final String RIGHT = "RIGHT";
 
 	public MoveSquareFrame() {
 		SquareComponent sc = new SquareComponent();
@@ -21,6 +23,16 @@ public class MoveSquareFrame extends JFrame {
 		buttonDown.setActionCommand(DOWN);
 		buttonDown.addActionListener(sc);
 		add(buttonDown, BorderLayout.SOUTH);
+		
+		JButton buttonLeft = new JButton(LEFT);
+		buttonLeft.setActionCommand(LEFT);
+		buttonLeft.addActionListener(sc);
+		add(buttonLeft, BorderLayout.WEST);
+		
+		JButton buttonRight = new JButton(RIGHT);
+		buttonRight.setActionCommand(RIGHT);
+		buttonRight.addActionListener(sc);
+		add(buttonRight, BorderLayout.EAST);
 
 		setBounds(100, 100, 400, 400);
 	}
