@@ -16,6 +16,13 @@ public class RobotManager {
 			robot.forward(SIDE);
 			robot.setCourse(robot.getCourse() + 360 / COUNT);
 		}
+		
+		robot.setCourse(90);
+		robot.forward(256);
+		robot.setCourse(0);
+		robot.forward(128);
+		robot.setCourse(-90);
+		robot.forward(256);
 
 		RobotFrame rf = new RobotFrame(robot);
 		rf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
